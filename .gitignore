@@ -32,3 +32,5 @@ bower.json
 
 # ignore Cloud9 files
 .c9/
+# Ignore application configuration
+/config/application.yml
