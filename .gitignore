@@ -31,3 +31,4 @@ config/secrets.yml
 bower.json
 
 # ignore Cloud9 files
+.c9/
