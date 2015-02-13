@@ -11,5 +11,13 @@ RSpec.describe Vehicle, type: :model do
     it "checks both fields are not empty" do
       expect(FactoryGirl.build(:vehicle, license_plate: "", vehicle_type: "")).not_to be_valid
     end
+    it "checks license place has a minimum length of 6 characters" do
+      expect(FactoryGirl.build(:vehicle, license_plate: "", vehicle_type: "")).not_to be_valid
+    end
+    it "checks the vehicle type is either car or motorcycle" do
+      expect(FactoryGirl.build(:vehicle, vehicle_type: "Bike")).not_to be_valid
+      expect(FactoryGirl.build(:vehicle, vehicle_type: "car")).to be_valid
+      expect(FactoryGirl.build(:vehicle, license_plate: "B-DF5734", vehicle_type: "motorcycle")).to be_valid
+    end
   end
 end
